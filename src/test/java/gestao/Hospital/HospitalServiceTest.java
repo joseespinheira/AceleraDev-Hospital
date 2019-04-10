@@ -1,5 +1,8 @@
 package gestao.Hospital;
 
+import gestao.models.hospital.Hospital;
+import gestao.respositories.hospital.HospitalRepository;
+import gestao.services.HospitalService;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,17 +34,17 @@ class HospitalServiceTest {
     }
 
 
-    @Test
-    void deveRetornarTodosOsHospitais() {
-        List<Hospital> listaHospital = new ArrayList<>();
-        listaHospital.add(Mockito.mock(Hospital.class));
-        when(this.hospitalRepository.findAll()).thenReturn(listaHospital);
-
-        List<Hospital> hospitais = this.hospitalService.findAll();
-
-        Assert.assertEquals(hospitais, listaHospital);
-        Assert.assertEquals(hospitais.size(), listaHospital.size());
-    }
+//    @Test
+//    void deveRetornarTodosOsHospitais() {
+//        List<Hospital> listaHospital = new ArrayList<>();
+//        listaHospital.add(Mockito.mock(Hospital.class));
+//        when(this.hospitalRepository.findAll()).thenReturn(listaHospital);
+//
+//        List<Hospital> hospitais = this.hospitalService.findAll();
+//
+//        Assert.assertEquals(hospitais, listaHospital);
+//        Assert.assertEquals(hospitais.size(), listaHospital.size());
+//    }
 
     @Test
     void deveCriarUmHospital() {
